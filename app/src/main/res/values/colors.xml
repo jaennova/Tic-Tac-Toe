@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red_500_light">#ff7961</color>
+    <color name="red_500">#f44336</color>
+    <color name="red_500_dark">#ba000d</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#323E53</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">#22A7F0</color>
+    <color name="secondary">#F7CA18</color>
+    <color name="background">#E4F1FE</color>
+    <color name="accent">#E26A6A</color>
+
+    <color name="line">#E0E0E0</color>
+    <color name="background_board">#FFFFFF</color>
+    <color name="button">#FF9800</color>
+    
+</resources>
+
+<!--
+X (Cruz): #4CAF50 (Verde)
+O (Círculo): #2196F3 (Azul)
+Rayas del Tablero: #E0E0E0 (Gris claro)
+Background del Tablero: #FFFFFF (Blanco)
+Botón: #FF9800 (Naranja)
+Paleta de colores para el modo oscuro:
+
+X (Cruz): #8BC34A (Verde claro)
+O (Círculo): #03A9F4 (Azul claro)
+Rayas del Tablero: #424242 (Gris oscuro)
+Background del Tablero: #303030 (Gris oscuro)
+Botón: #FFA000 (Naranja oscuro)
+-->
+<!--
+Primary: #FFAFBD (Pink Sherbet) for player one marks
+Secondary: #CBAACB (Lilac) for player two marks
+Background: #FFF0F5 (Lavender Blush) for a soft, inviting background
+Accent: #A3D5D3 (Magic Mint) for buttons and interactive elements
+Vibrant Palette:
+
+Primary: #22A7F0 (Picton Blue) for prominent actions like selecting a grid square
+Secondary: #F7CA18 (Sunflower Yellow) for highlighting winning combinations
+Background: #E4F1FE (Alice Blue) for a bright and energetic board background
+Accent: #E26A6A (Pastel Red) for urgent elements like timed indicators or error messages
+Neutral Palette:
+
+-->
