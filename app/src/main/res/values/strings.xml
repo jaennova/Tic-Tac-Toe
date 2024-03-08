@@ -2,8 +2,15 @@
     <string name="app_name">TicTacToe</string>
     <string name="label_content_desc_tic_tac_toe_cell">Tic-Tac-Toe Cell</string>
     <string name="label_reset">Reset</string>
-    <string name="play_again">Play again</string>
+    <string name="play_again">Reiniciarl el juego</string>
     <string name="choose_difficult">Elige la dificultad</string>
     <string name="start">Jugar</string>
     <string name="play_as">Jugar como:</string>
+    <string name="facil">Facil</string>
+    <string name="probability">60% victoria 40% derrota</string>
+    <string name="materia">Materia</string>
+    <string name="IA">Inteligencia Artificial I</string>
+    <string name="person1">Jaen Manuel Martinez Nova</string>
+    <string name="person2">Araceli Esmeralda Ramirez Alonso</string>
+    <string name="person3">Dulce Esmeralda Morales Mejia</string>
 </resources>

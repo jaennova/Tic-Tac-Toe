@@ -7,13 +7,14 @@
     tools:context=".TicTacToeGameActivity">
 
 
+    <!-- Celdas del tablero del juego -->
     <ImageView
         android:id="@+id/square_0"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@string/label_content_desc_tic_tac_toe_cell"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_cross"
         app:layout_constraintBottom_toTopOf="@+id/square_4"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toStartOf="@+id/square_4"
@@ -26,7 +27,7 @@
         android:layout_height="0dp"
         android:contentDescription="@string/label_content_desc_tic_tac_toe_cell"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_cross"
         app:layout_constraintBottom_toTopOf="@+id/square_4"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintStart_toStartOf="@+id/square_4"
@@ -39,7 +40,7 @@
         android:layout_height="0dp"
         android:contentDescription="@string/label_content_desc_tic_tac_toe_cell"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_cross"
         app:layout_constraintBottom_toTopOf="@+id/square_4"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintStart_toEndOf="@+id/square_4"
@@ -52,7 +53,7 @@
         android:layout_height="0dp"
         android:contentDescription="@string/label_content_desc_tic_tac_toe_cell"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_cross"
         app:layout_constraintBottom_toBottomOf="@+id/square_4"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toStartOf="@+id/square_4"
@@ -79,7 +80,7 @@
         android:layout_height="0dp"
         android:contentDescription="@string/label_content_desc_tic_tac_toe_cell"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_cross"
         app:layout_constraintBottom_toBottomOf="@+id/square_4"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintStart_toEndOf="@+id/square_4"
@@ -91,7 +92,7 @@
         android:layout_height="0dp"
         android:contentDescription="@string/label_content_desc_tic_tac_toe_cell"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_cross"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toStartOf="@+id/square_4"
         app:layout_constraintTop_toBottomOf="@+id/square_4"
@@ -104,7 +105,7 @@
         android:layout_height="0dp"
         android:contentDescription="@string/label_content_desc_tic_tac_toe_cell"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_cross"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintStart_toStartOf="@+id/square_4"
         app:layout_constraintTop_toBottomOf="@+id/square_4"
@@ -117,16 +118,16 @@
         android:layout_height="0dp"
         android:contentDescription="@string/label_content_desc_tic_tac_toe_cell"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_cross"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintStart_toEndOf="@+id/square_4"
         app:layout_constraintTop_toBottomOf="@+id/square_4"
         app:layout_constraintWidth_percent="0.25" />
 
-    <!-- Create Dividing Lines -->
+    <!-- Líneas divisorias entre las celdas del tablero -->
     <FrameLayout
         android:layout_width="0dp"
-        android:layout_height="4dp"
+        android:layout_height="8dp"
         android:theme="@style/BoardLines"
         app:layout_constraintEnd_toEndOf="@id/square_2"
         app:layout_constraintStart_toStartOf="@id/square_0"
@@ -134,7 +135,7 @@
 
     <FrameLayout
         android:layout_width="0dp"
-        android:layout_height="4dp"
+        android:layout_height="8dp"
 
         android:theme="@style/BoardLines"
         app:layout_constraintEnd_toEndOf="@id/square_2"
@@ -142,7 +143,7 @@
         app:layout_constraintTop_toBottomOf="@id/square_4" />
 
     <FrameLayout
-        android:layout_width="4dp"
+        android:layout_width="8dp"
         android:layout_height="0dp"
         android:theme="@style/BoardLines"
         app:layout_constraintBottom_toBottomOf="@id/square_8"
@@ -150,13 +151,14 @@
         app:layout_constraintTop_toTopOf="@id/square_2" />
 
     <FrameLayout
-        android:layout_width="4dp"
+        android:layout_width="8dp"
         android:layout_height="0dp"
         android:theme="@style/BoardLines"
         app:layout_constraintBottom_toBottomOf="@id/square_8"
         app:layout_constraintStart_toEndOf="@id/square_4"
         app:layout_constraintTop_toTopOf="@id/square_2" />
 
+    <!-- Botón para reiniciar el juego -->
     <Button
         android:id="@+id/button_reset"
         android:layout_width="wrap_content"

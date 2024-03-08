@@ -1,5 +1,6 @@
 package com.jaennova.tictactoe
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -36,22 +37,21 @@ class TicTacToeGameActivity : AppCompatActivity() {
         when (board.boardState) {
             BoardState.STAR_WON -> {
                 setupBoard(true)
-                showWinningMessage("X Won!")
+                showWinningMessage("Ganaste!")
             }
 
             BoardState.CIRCLE_WON -> {
                 setupBoard(true)
-                showWinningMessage("O Won!")
+                showWinningMessage("Te ganó la IA!")
             }
 
             BoardState.DRAW -> {
                 setupBoard(true)
-                showWinningMessage("It's a Draw!")
+                showWinningMessage("Es un empate!")
             }
 
             BoardState.INCOMPLETE -> {
                 setupBoard()
-//                hideWinningMessage()
             }
         }
     }
@@ -93,9 +93,25 @@ class TicTacToeGameActivity : AppCompatActivity() {
     }
 
     private fun showWinningMessage(message: String) {
-        val alertDialogBuilder = AlertDialog.Builder(this)
-        alertDialogBuilder.setTitle("Game Over")
+        val alertDialogBuilder = android.app.AlertDialog.Builder(this)
+        alertDialogBuilder.setTitle("Juego Terminado")
         alertDialogBuilder.setMessage(message)
+
+        // Add a button to restart the game
+        alertDialogBuilder.setPositiveButton("Reiniciar") { dialog, _ ->
+            // Code to restart the game
+            vm.resetBoard()
+            dialog.dismiss()
+        }
+
+        // Add a button to return to the main screen
+        alertDialogBuilder.setNegativeButton("Menu Principal") { dialog, _ ->
+            // Code to return to the main screen
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            dialog.dismiss()
+        }
+
         val alertDialog = alertDialogBuilder.create()
         alertDialog.setCancelable(true)
         alertDialog.show()

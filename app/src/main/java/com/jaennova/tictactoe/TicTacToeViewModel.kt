@@ -17,7 +17,7 @@ class TicTacToeViewModel : ViewModel() {
     }
 
     fun boardClicked(cell: Cell) {
-        if (mainBoard.setCell(cell, CellState.Star)) {
+        if (mainBoard.setCell(cell, CellState.Cross)) {
             updateBoard()
             if (mainBoard.boardState == BoardState.INCOMPLETE) {
                 aiTurn()
@@ -25,39 +25,39 @@ class TicTacToeViewModel : ViewModel() {
         }
     }
 
+    // Función para que la AI tome su turno
     private fun aiTurn() {
+        // Busca si hay una próxima jugada ganadora para el círculo (AI)
         val circleWinningCell = mainBoard.findNextWinningMove(CellState.Circle)
-        val startWinningCell = mainBoard.findNextWinningMove(CellState.Star)
-        when {
-            // If the AI can win, place a circle in that spot
-            circleWinningCell != null -> mainBoard.setCell(circleWinningCell, CellState.Circle)
-            // If the AI is about to lose, place a circle in a blocking spot
-            startWinningCell != null -> mainBoard.setCell(startWinningCell, CellState.Circle)
-            // Prioritize the middle
-            mainBoard.setCell(Cell.CENTER_CENTER, CellState.Circle) -> Unit
-            // Otherwise place a circle in a random spot
-            else -> do {
+        // Busca si hay una próxima jugada ganadora para la cruz (oponente)
+        val startWinningCell = mainBoard.findNextWinningMove(CellState.Cross)
+
+        // Determina qué acción tomar basada en las condiciones
+
+        // Si la AI tiene una jugada ganadora, coloca un círculo en esa celda
+        if (circleWinningCell != null) {
+            mainBoard.setCell(circleWinningCell, CellState.Circle)
+        }
+        // Si el oponente tiene una jugada ganadora próxima, coloca un círculo en una celda para bloquear al oponente
+        else if (startWinningCell != null) {
+            mainBoard.setCell(startWinningCell, CellState.Circle)
+        }
+        // Prioriza el centro si está disponible
+        else if (mainBoard.setCell(Cell.CENTER_CENTER, CellState.Circle)) {
+            Unit // No es necesario hacer nada adicional
+        }
+        // De lo contrario, elige aleatoriamente una celda vacía y coloca un círculo en ella
+        else {
+            do {
                 val nextCell = Cell.entries.toTypedArray().random()
                 val placeSuccess = mainBoard.setCell(nextCell, CellState.Circle)
             } while (!placeSuccess)
         }
 
+        // Actualiza el tablero después del movimiento de la AI
         updateBoard()
     }
 
-    private fun aiTurnLevel(difficultyLevel: DifficultyLevel) {
-        when (difficultyLevel) {
-            DifficultyLevel.EASY -> {
-                // Implementa la lógica para el nivel fácil
-            }
-            DifficultyLevel.MEDIUM -> {
-                // Implementa la lógica para el nivel medio
-            }
-            DifficultyLevel.HARD -> {
-                // Implementa la lógica para el nivel difícil
-            }
-        }
-    }
 
 
     fun resetBoard() {

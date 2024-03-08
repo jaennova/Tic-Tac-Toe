@@ -1,7 +1,13 @@
 package com.jaennova.tictactoe.models
 
-data class Board(private val board: MutableMap<Cell, CellState> = mutableMapOf()) {
+data class Board(
+    // Mapa mutable privado para almacenar el estado de cada celda
+    var currentPlayer: CellState.Cross = CellState.Cross,
+    val board: MutableMap<Cell, CellState> = mutableMapOf()
+) {
 
+    // Propiedades computadas para acceder fácilmente al estado de cada celda
+    // Devuelven Blank si no está setteada
     val topLeft: CellState
         get() = board[Cell.TOP_LEFT] ?: CellState.Blank
     val topCenter: CellState
@@ -22,13 +28,12 @@ data class Board(private val board: MutableMap<Cell, CellState> = mutableMapOf()
         get() = board[Cell.BOTTOM_RIGHT] ?: CellState.Blank
 
     /**
-     * Set the cell state
+     * Setea el estado de una celda
      *
-     * @param cell: The Cell to assign a state to
-     * @param state: The State to assign
+     * @param cell: la celda a setear
+     * @param state: el estado a asignar
      *
-     * @return true iff the state was set successfully. If the cell has already been set,
-     * false will be returned
+     * @return true si se pudo setear, false si ya estaba ocupada
      */
     fun setCell(cell: Cell, state: CellState): Boolean {
         if (board.containsKey(cell)) {
@@ -39,17 +44,16 @@ data class Board(private val board: MutableMap<Cell, CellState> = mutableMapOf()
     }
 
     /**
-     * Clear the board of all states
+     * Limpia el tablero poniendo todas las celdas en Blank
      */
     fun clearBoard() {
         board.clear()
     }
 
     /**
-     * Find the next winning move for the current cell state
+     * Busca si hay un movimiento ganador disponible para el estado dado
      *
-     * @return The cell of the winning move for the provided state.
-     * If there is no winning move on this turn, return null
+     * @return la celda ganadora o null si no hay
      */
     fun findNextWinningMove(state: CellState): Cell? = when {
         Cell.TOP_LEFT wins state -> Cell.TOP_LEFT
@@ -82,7 +86,7 @@ data class Board(private val board: MutableMap<Cell, CellState> = mutableMapOf()
     val boardState: BoardState
         get() {
             return when {
-                stateWon(CellState.Star) -> BoardState.STAR_WON
+                stateWon(CellState.Cross) -> BoardState.STAR_WON
                 stateWon(CellState.Circle) -> BoardState.CIRCLE_WON
                 board.size < 9 -> BoardState.INCOMPLETE
                 else -> BoardState.DRAW
