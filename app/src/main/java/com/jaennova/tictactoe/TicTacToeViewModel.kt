@@ -25,14 +25,9 @@ class TicTacToeViewModel : ViewModel() {
         }
     }
 
-    // Función para que la AI tome su turno
     private fun aiTurn() {
-        // Busca si hay una próxima jugada ganadora para el círculo (AI)
         val circleWinningCell = mainBoard.findNextWinningMove(CellState.Circle)
-        // Busca si hay una próxima jugada ganadora para la cruz (oponente)
         val startWinningCell = mainBoard.findNextWinningMove(CellState.Cross)
-
-        // Determina qué acción tomar basada en las condiciones
 
         // Si la AI tiene una jugada ganadora, coloca un círculo en esa celda
         if (circleWinningCell != null) {
