@@ -1,5 +1,5 @@
 # Tic-Tac-Toe
- 
+
 ![](/imgs/FirstScreen.png)
 ![](/imgs/SecondScreen.png)
 
@@ -36,3 +36,43 @@ Como esta aplicación solo tiene el código fuente disponible, es necesario comp
 ## Uso
 
 Una vez que la aplicación se haya iniciado, simplemente toca en las celdas vacías del tablero para colocar tus movimientos. La IA jugará automáticamente después de cada uno de tus movimientos. El objetivo es conseguir tres fichas en línea (horizontal, vertical o diagonal) antes que la IA.
+
+## Áreas de Mejora y Contribución
+
+Si deseas contribuir al proyecto, aquí hay algunas áreas en las que puedes trabajar:
+
+### Nuevos Modos de Juego
+- Implementar modo multijugador local (2 jugadores en el mismo dispositivo)
+- Agregar modo multijugador online
+- Crear un modo de torneo
+
+### Mejoras en la IA
+- Implementar diferentes niveles de dificultad (fácil, medio, difícil)
+- Mejorar el algoritmo de la IA actual
+- Agregar algoritmos de aprendizaje automático para la IA
+
+### Interfaz de Usuario
+- Añadir animaciones para las jugadas
+- Implementar temas personalizables (claro/oscuro)
+- Mejorar la interfaz para diferentes tamaños de pantalla
+- Agregar efectos de sonido y música de fondo
+
+### Funcionalidades Adicionales
+- Sistema de puntuación y rankings
+- Perfil de usuario y estadísticas
+- Logros y desafíos
+- Soporte para múltiples idiomas
+
+### Mejoras Técnicas
+- Implementar tests unitarios y de integración
+- Optimizar el rendimiento
+- Mejorar la arquitectura actual
+- Agregar persistencia de datos local
+
+Si deseas contribuir, por favor:
+1. Haz fork del repositorio
+2. Crea una nueva rama para tu función
+3. Realiza tus cambios y documéntalos
+4. Envía un pull request con una descripción detallada de los cambios
+
+¡Todas las contribuciones son bienvenidas!
